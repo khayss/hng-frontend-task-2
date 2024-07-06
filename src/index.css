@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
+:root {
+  --header-bg: rgba(234, 234, 234, 0.4);
+  --hero-bg: rgba(249, 249, 249, 1);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
