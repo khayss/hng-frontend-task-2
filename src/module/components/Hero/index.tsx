@@ -3,7 +3,7 @@ import { Button } from "../Button/Button";
 
 export function Hero() {
   return (
-    <div className="bg-[--hero-bg] font-roboto flex flex-col items-center max-w[820px] w-full gap-30 h-[400px] justify-center px-[7.7%]">
+    <div className="bg-[--hero-bg] font-roboto flex flex-col items-center w-full gap-30 h-[400px] justify-center px-[7.7%]">
       <div>
         <h1 className="text-big font-semibold text-center">
           Step up Your Game

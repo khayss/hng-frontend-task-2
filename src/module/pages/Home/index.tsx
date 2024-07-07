@@ -10,7 +10,7 @@ import BrandLogo from "../../components/BrandLogo";
 function Home() {
   const productToUse = products.sort(() => Math.random() - 0.5).slice(0, 14);
   return (
-    <div className="w-full flex flex-col items-center font-roboto px-[6.88%] pb-52">
+    <div className="w-full flex flex-col items-center font-roboto pb-52">
       <Hero />
       <div className="w-full h-[215px] flex flex-col justify-evenly items-center">
         <div className="w-full flex items-center justify-between gap-50 overflow-x-scroll">
@@ -29,48 +29,50 @@ function Home() {
           ))}
         </div> */}
       </div>
-      <div className="w-full flex flex-col items-center max-w-[1242px] gap-80">
-        <h1 className="text-big font-medium text-center">New Arrivals</h1>
-        <div className="w-full flex flex-col gap-20 items-center">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-[21px] place-items-center">
-            <div className="col-span-1 lg:col-span-1 xl:col-span-2 rounded-lg overflow-hidden self-stretch">
-              <img
-                src="images/home/new-arrivals-img.jpg"
-                alt="new arrivals"
-                className="w-full h-full object-cover"
-              />
+      <div className="w-full px-[6.88%]">
+        <div className="w-full flex flex-col items-center max-w-[1242px] gap-80">
+          <div className="w-full flex flex-col gap-20 items-center">
+            <h1 className="text-big font-medium text-center">New Arrivals</h1>
+            <div className="w-full grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-[21px] place-items-center">
+              <div className="col-span-1 lg:col-span-1 xl:col-span-2 rounded-lg overflow-hidden self-stretch">
+                <img
+                  src="images/home/new-arrivals-img.jpg"
+                  alt="new arrivals"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {productToUse.slice(0, 2).map((product) => (
+                <ProductCard
+                  key={product.id}
+                  brand={product.brand}
+                  imgUrl={product.images[0]}
+                  price={product.price}
+                  productName={product.name}
+                  quantitySold={product.amountSold}
+                  rating={product.rating}
+                  discountPercentage={product.discountPercentage}
+                />
+              ))}
             </div>
-            {productToUse.slice(0, 2).map((product) => (
-              <ProductCard
-                key={product.id}
-                brand={product.brand}
-                imgUrl={product.images[0]}
-                price={product.price}
-                productName={product.name}
-                quantitySold={product.amountSold}
-                rating={product.rating}
-                discountPercentage={product.discountPercentage}
-              />
-            ))}
+            <div className="w-full">
+              <ThreeCards items={productToUse.slice(2, 5)} />
+            </div>
           </div>
-          <div className="w-full">
-            <ThreeCards items={productToUse.slice(2, 5)} />
+          <div className="flex w-full flex-col items-center gap-20">
+            <h1 className="text-big font-medium text-center">
+              Our Special Offers
+            </h1>
+            <ThreeCards items={productToUse.slice(5, 8)} />
           </div>
-        </div>
-        <div className="flex w-full flex-col items-center gap-20">
-          <h1 className="text-big font-medium text-center">
-            Our Special Offers
-          </h1>
-          <ThreeCards items={productToUse.slice(5, 8)} />
-        </div>
-        <div className="flex w-full flex-col items-center gap-20">
-          <h1 className="text-big font-medium text-center">
-            Featured Sneakers
-          </h1>
-          <ThreeCards items={productToUse.slice(8, 14)} />
-        </div>
-        <div>
-          <Button text="View All Sneakers" />
+          <div className="flex w-full flex-col items-center gap-20">
+            <h1 className="text-big font-medium text-center">
+              Featured Sneakers
+            </h1>
+            <ThreeCards items={productToUse.slice(8, 14)} />
+          </div>
+          <div>
+            <Button text="View All Sneakers" />
+          </div>
         </div>
       </div>
     </div>
