@@ -7,7 +7,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`h-42 px-16 py-12 rounded-lg ${bg} ${textColor} flex items-center justify-center text-text-main font-normal`}
+      className={`h-42 px-16 py-12 rounded-lg ${bg} ${textColor} flex items-center justify-center text-text-main font-medium`}
     >
       {text}
     </button>

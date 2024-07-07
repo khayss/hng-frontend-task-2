@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       fontSize: {
+        "body-14": ["14px", { lineHeight: "24px", fontWeight: "500" }],
         "text-main": [
           "15px",
           {
@@ -24,7 +25,15 @@ export default {
           "19px",
           { fontWeight: "500", lineHeight: "22.27px" },
         ],
-        
+        big: ["37px", { fontWeight: "600", lineHeight: "43.36px" }],
+        "logo-title": [
+          "23.83px",
+          {
+            lineHeight: "27.93px",
+            fontWeight: "500",
+          },
+        ],
+        "x-small": ["10px", { fontWeight: "500", lineHeight: "11.72px" }],
       },
       fontFamily: {
         roboto: '"Roboto Flex", sans-serif',
