@@ -43,6 +43,7 @@ function Home() {
               </div>
               {productToUse.slice(0, 2).map((product) => (
                 <ProductCard
+                  id={product.id}
                   key={product.id}
                   brand={product.brand}
                   imgUrl={product.images[0]}
@@ -86,6 +87,7 @@ function ThreeCards({ items }: { items: Product[] }) {
     <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-20 place-items-center">
       {items.map((item) => (
         <ProductCard
+          id={item.id}
           key={item.id}
           brand={item.brand}
           imgUrl={item.images[0]}

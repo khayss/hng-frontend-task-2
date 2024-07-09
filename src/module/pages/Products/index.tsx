@@ -13,6 +13,7 @@ function Products() {
             <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[21px] gap-y-20 place-items-center">
               {products.map((product) => (
                 <ProductCard
+                  id={product.id}
                   brand={product.brandCategory}
                   imgUrl={product.images[0]}
                   price={product.price}

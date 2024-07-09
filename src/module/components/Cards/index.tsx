@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Favorite, HalfStar, Like } from "../../svgs/Icons";
 import { formatNumberWithCommas } from "../../utils/helper";
 
@@ -11,6 +12,7 @@ type ProductCardProps = {
   rating: number;
   quantitySold: number;
   price: number;
+  id: number;
 };
 
 export function ProductCard({
@@ -23,21 +25,28 @@ export function ProductCard({
   rating,
   quantitySold,
   price,
+  id,
 }: ProductCardProps) {
   return (
     <div className="max-w-[400px] font-roboto font-medium w-full rounded-lg overflow-hidden">
-      <div className="w-full h-[300px] bg-soft-gray relative">
-        <img
-          src={imgUrl}
-          alt={productName}
-          className="object-contain object-center h-full w-full"
-        />
-        <div className="absolute h-40 top-5 right-5">{favorite ? <Favorite /> : <Like />}</div>
-      </div>
+      <Link to={`/product/${id}`}>
+        <div className="w-full h-[300px] bg-soft-gray relative">
+          <img
+            src={imgUrl}
+            alt={productName}
+            className="object-contain object-center h-full w-full"
+          />
+          <div className="absolute h-40 top-5 right-5">
+            {favorite ? <Favorite /> : <Like />}
+          </div>
+        </div>
+      </Link>
       <div className="text-product-heading py-8 flex flex-col items-start gap-8">
         <div>
           <small className="text-small">{brand}</small>
-          <h4>{productName}</h4>
+          <Link to={`/product/${id}`}>
+            <h4>{productName}</h4>
+          </Link>
         </div>
         <div className="flex gap-4 text-small">
           <div className="h-16">
@@ -64,12 +73,10 @@ export function ProductCard({
               inCart ? "bg-soft-red text-red" : "bg-soft-blue text-main"
             }`}
           >
-            { inCart ? "Remove from Cart" : "Add to Cart"}
+            {inCart ? "Remove from Cart" : "Add to Cart"}
           </button>
         </div>
       </div>
     </div>
   );
 }
-
-

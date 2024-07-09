@@ -140,6 +140,7 @@ function Product() {
             .filter((item) => item.brand === product?.brand)
             .map((eachProduct) => (
               <ProductCard
+                id={eachProduct.id}
                 key={eachProduct.id}
                 brand={eachProduct.brand}
                 imgUrl={eachProduct.images[0]}
