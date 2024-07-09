@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import products from "../../../assets/data/products.json";
-import { HalfStar, Like } from "../../svgs/Icons";
+import { Favorite, HalfStar, Like } from "../../svgs/Icons";
 import { Button } from "../../components/Button/Button";
 import { formatNumberWithCommas } from "../../utils/helper";
 import { ProductCard } from "../../components/Cards";
@@ -48,7 +48,7 @@ function Product() {
             <div className="w-full flex justify-between">
               <h3 className="text-2xl font-semibold">{product?.name}</h3>
               <div className="h-30 w-[30px]">
-                <Like />
+                {product?.favorite ? <Favorite /> : <Like />}
               </div>
             </div>
             <div>
@@ -122,9 +122,9 @@ function Product() {
             </div>
             <div className="w-full flex justify-between items-center gap-16 md:justify-end">
               <Button
-                text="Add to Cart"
-                bg="bg-soft-blue"
-                textColor="text-main"
+                text={product?.inCart ? "Remove from Cart" : "Add to Cart"}
+                bg={product?.inCart ? "bg-soft-red" : "bg-soft-blue"}
+                textColor={product?.inCart ? "text-red" : "text-main"}
                 additionalClasses="w-1/2 md:w-auto"
               />
               <Button text="Checkout" additionalClasses="w-1/2 md:w-auto" />

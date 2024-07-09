@@ -22,6 +22,8 @@ function Products() {
                   rating={product.rating}
                   discountPercentage={product.discountPercentage}
                   key={product.id}
+                  favorite={product.favorite}
+                  inCart={product.inCart}
                 />
               ))}
             </div>

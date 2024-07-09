@@ -13,4 +13,11 @@ export interface Product {
   stock: number;
   numReviews: number;
   description: string;
+  favorite?: boolean;
+  inCart?: boolean;
+  color?: {
+    text: string;
+    color: string;
+  };
+  size?: number;
 }

@@ -24,7 +24,14 @@
     "sizes": [32, 35, 38, 39, 40, 42, 45],
     "stock": 500,
     "numReviews": 32,
-    "description": "The Ego Vessel is the perfect addition to your casual wardrobe. Pair them with jeans, joggers, or even a dress for an effortlessly cool look that's sure to make a statement. Whether you're running errands or hitting the town, these versatile sneakers will keep you feeling and looking your best."
+    "description": "The Ego Vessel is the perfect addition to your casual wardrobe. Pair them with jeans, joggers, or even a dress for an effortlessly cool look that's sure to make a statement. Whether you're running errands or hitting the town, these versatile sneakers will keep you feeling and looking your best.",
+    "favorite": true,
+    "inCart": true,
+    "color": {
+      "text": "black",
+      "color": "#FFFFFF"
+    },
+    "size": 39
   },
 
   {
@@ -47,7 +54,10 @@
     "sizes": [32, 35, 38, 39, 40, 42, 45],
     "stock": 500,
     "numReviews": 32,
-    "description": ""
+    "description": "",
+    "inCart": true,
+    "color": { "text": "yellow", "color": "#FFCD00" },
+    "size": 42
   },
   {
     "id": 3,
@@ -91,7 +101,8 @@
     "sizes": [32, 35, 38, 39, 40, 42, 45],
     "stock": 500,
     "numReviews": 32,
-    "description": ""
+    "description": "",
+    "favorite": true
   },
   {
     "id": 5,
@@ -135,7 +146,8 @@
     "sizes": [32, 35, 38, 39, 40, 42, 45],
     "stock": 500,
     "numReviews": 32,
-    "description": ""
+    "description": "",
+    "favorite": true
   },
   {
     "id": 7,
@@ -157,7 +169,10 @@
     "sizes": [32, 35, 38, 39, 40, 42, 45],
     "stock": 500,
     "numReviews": 32,
-    "description": ""
+    "description": "",
+    "inCart": true,
+    "color": { "text": "blue", "color": "#0000FF" },
+    "size": 40
   },
   {
     "id": 8,
@@ -180,7 +195,10 @@
     "sizes": [32, 35, 38, 39, 40, 42, 45],
     "stock": 500,
     "numReviews": 32,
-    "description": ""
+    "description": "",
+    "inCart": true,
+    "color": { "text": "red", "color": "#FF0000" },
+    "size": 38
   },
   {
     "id": 9,
@@ -224,7 +242,10 @@
     "sizes": [32, 35, 38, 39, 40, 42, 45],
     "stock": 500,
     "numReviews": 32,
-    "description": ""
+    "description": "",
+    "inCart": true,
+    "color": { "text": "orange", "color": "#FFA500" },
+    "size": 35
   },
   {
     "id": 11,
@@ -268,7 +289,8 @@
     "sizes": [32, 35, 38, 39, 40, 42, 45],
     "stock": 500,
     "numReviews": 32,
-    "description": ""
+    "description": "",
+    "favorite": true
   },
   {
     "id": 13,
@@ -335,7 +357,8 @@
     "sizes": [32, 35, 38, 39, 40, 42, 45],
     "stock": 500,
     "numReviews": 32,
-    "description": ""
+    "description": "",
+    "favorite": true
   },
 
   {
