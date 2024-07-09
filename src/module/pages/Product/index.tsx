@@ -11,11 +11,16 @@ function Product() {
 
   return (
     <div className="w-full px-[7%] flex flex-col items-center gap-50 py-20">
-      <div className="w-full">
-        <div className="w-full">
-          <div className="w-full whitespace-nowrap overflow-hidden relative rounded-xl bg-soft-gray">
+      <div className="w-full flex flex-col items-center md:flex-row md:gap-20 md:items-start">
+        <div className="w-full md:w-1/2">
+          <div className="w-full whitespace-nowrap overflow-hidden md:overflow-visible md:whitespace-normal md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 lg:gap-16 xl:gap-20 relative rounded-xl bg-soft-gray md:bg-transparent">
             {product?.images.map((image, index) => (
-              <div className="h-[300px] w-full inline-block" key={index}>
+              <div
+                className={`h-[300px] w-full inline-block bg-soft-gray rounded-xl ${
+                  index === 0 ? "lg:col-span-3" : ""
+                }`}
+                key={index}
+              >
                 <img
                   src={image}
                   alt=""
@@ -23,7 +28,7 @@ function Product() {
                 />
               </div>
             ))}
-            <div className="absolute w-full bottom-5 z-50 flex justify-center items-center gap-8">
+            <div className="absolute w-full bottom-5 z-50 flex justify-center items-center gap-8 md:hidden">
               {product?.images.map((_, index) => (
                 <div
                   className={`h-8 w-[8px] ${
@@ -35,7 +40,7 @@ function Product() {
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col gap-16 items-start">
+        <div className="w-full md:w-1/2 flex flex-col gap-16 items-start">
           <div className="text-small">
             <small>{product?.brandCategory}</small>
           </div>
@@ -108,27 +113,29 @@ function Product() {
               </form>
             </div>
           </div>
-          <div>
-            <small className="text-small text-gray">Total Price</small>
-            <h4 className="text-lg font-medium">{`₦ ${formatNumberWithCommas(
-              product?.price || 0
-            )}`}</h4>
-          </div>
-          <div className="w-full flex justify-between items-center gap-16">
-            <Button
-              text="Add to Cart"
-              bg="bg-soft-blue"
-              textColor="text-main"
-              additionalClasses="w-1/2"
-            />
-            <Button text="Checkout" additionalClasses="w-1/2" />
+          <div className="w-full flex flex-col gap-16 md:flex-row md:items-end md:justify-between">
+            <div>
+              <small className="text-small text-gray">Total Price</small>
+              <h4 className="text-lg font-medium">{`₦ ${formatNumberWithCommas(
+                product?.price || 0
+              )}`}</h4>
+            </div>
+            <div className="w-full flex justify-between items-center gap-16 md:justify-end">
+              <Button
+                text="Add to Cart"
+                bg="bg-soft-blue"
+                textColor="text-main"
+                additionalClasses="w-1/2 md:w-auto"
+              />
+              <Button text="Checkout" additionalClasses="w-1/2 md:w-auto" />
+            </div>
           </div>
         </div>
       </div>
 
       <div className="w-full flex flex-col items-center">
         <h1 className="text-big">{`More from ${product?.brand}`}</h1>
-        <div className="w-full py-20 grid grid-cols-1 gap-16">
+        <div className="w-full py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 place-items-center">
           {products
             .filter((item) => item.brand === product?.brand)
             .map((eachProduct) => (
